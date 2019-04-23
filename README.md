@@ -1,3 +1,12 @@
+## Status
+[![Build Status](https://travis-ci.com/babkamen/breakout-game.svg?branch=master)](https://travis-ci.com/babkamen/breakout-game)
+
+## Play game
+
+[Play game](https://babkamen.github.io/breakout-game/)
+
+
+
 <p align="center">
   <img width=100% src="https://github.com/digitsensitive/phaser3-typescript/blob/master/assets/github/phaser3-typescript.png">
   Phaser 3 Game Examples written in TypeScript.
@@ -32,9 +41,6 @@ improve this repository!
 
 ## Getting started
 
-## Play game
-
-[Play game](https://babkamen.github.io/breakout-game/)
 
 
 ### Prerequisites
