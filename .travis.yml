@@ -4,7 +4,7 @@ node_js:
 cache: npm
 before_install:
   - npm i pnpm
-  - pnpm
+  - pnpm i
 install:
   - npm run build
   - bash deploy.sh
