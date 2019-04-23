@@ -6,3 +6,4 @@ before_install:
   - pnpm i 
 install:
   - npm run build
+  - bash deploy.sh
