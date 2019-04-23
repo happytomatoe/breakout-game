@@ -1,8 +1,21 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 cache: npm
 before_install:
-  - npm i 
+- npm i
 install:
-  - npm run build
+- npm run build
+- mkdir deploy
+- cp index.html deploy/
+- cp -r dist deploy/
+- cp -r styles deploy/
+- cp -r assets deploy/
+deploy:
+  local_dir: deploy
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  keep_history: true
+  on:
+    branch: master

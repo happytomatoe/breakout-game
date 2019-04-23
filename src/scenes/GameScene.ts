@@ -24,7 +24,7 @@ export class GameScene extends Phaser.Scene {
             texture:'sprites',
             key: 'paddleBlu',
             cursors: this.cursors
-        }).setScale(1.5,1);
+        }).setScale(2,1);
 
         this.bricks = this.physics.add.staticGroup();
         for (let i = 0; i < 3; i++) {

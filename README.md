@@ -32,6 +32,11 @@ improve this repository!
 
 ## Getting started
 
+## Play game
+
+[Play game](https://babkamen.github.io/breakout-game/)
+
+
 ### Prerequisites
 
 ```
