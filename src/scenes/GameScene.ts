@@ -24,7 +24,7 @@ export class GameScene extends Phaser.Scene {
             texture:'sprites',
             key: 'paddleBlu',
             cursors: this.cursors
-        }).setScale(2,2);
+        }).setScale(1.5);
 
         this.bricks = this.physics.add.staticGroup();
         for (let i = 0; i < 3; i++) {
@@ -41,8 +41,8 @@ export class GameScene extends Phaser.Scene {
 
         this.ball = new Ball({
             scene: this,
-            x: this.paddle.x - 50,
-            y: this.paddle.y - this.paddle.height - 10,
+            x: this.paddle.x ,
+            y: this.paddle.y - this.paddle.height - 20,
             texture:'sprites',
             key: 'ballBlue',
         })
