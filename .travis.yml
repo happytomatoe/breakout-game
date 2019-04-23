@@ -3,6 +3,8 @@ node_js:
 - '7'
 cache: npm
 before_install:
+- openssl aes-256-cbc -K $encrypted_521473cb8b2e_key -iv $encrypted_521473cb8b2e_iv
+  -in id_rsa.pub.enc -out id_rsa.pub -d
 - npm i
 install:
 - npm run build
