@@ -9,7 +9,7 @@ export class GameScene extends Phaser.Scene {
     private paddle:Paddle;
     private bricks:Phaser.Physics.Arcade.StaticGroup;
     private ball:Ball;
-    
+    private keys
     constructor(test) {
         super({
             key: 'GameScene'
@@ -47,18 +47,17 @@ export class GameScene extends Phaser.Scene {
             key: 'ballBlue',
         })
         this.physics.add.collider(this.ball, this.bricks, this.hitBrick)
-        this.physics.add.overlap(this.paddle, this.ball, this.hitPaddle);
-
+        this.physics.add.collider(this.paddle, this.ball, this.hitPaddle,null,this);
+        this.keys=this.input.keyboard.addKeys('R');
     }
-
 
     hitBrick(ball, brick) {
         brick.disableBody(true, true);
     }
-    //TODO: fix bug with ball inside paddle
     hitPaddle(paddle, ball) {
+        console.log("Collide")
         let v = paddle.body.velocity.x === 0 ? ball.body.velocity.x : (paddle.body.velocity.x + ball.body.velocity.x) / 2;
-        ball.body.setVelocity(v, -ball.body.velocity.y)
+        ball.body.setVelocity(v,Math.max(-400,ball.body.velocity.y))
     }
 
 
@@ -66,6 +65,9 @@ export class GameScene extends Phaser.Scene {
         this.paddle.update(time, delta)
         if(this.cursors.space.isDown){
             this.ball.start()
+        }
+        if(this.keys.R.isDown){
+            this.scene.restart();
         }
         
     }
