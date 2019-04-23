@@ -3,7 +3,7 @@ node_js:
   - "7"
 cache: npm
 before_install:
-  - npm i pnpm
+  - curl -L https://unpkg.com/@pnpm/self-installer | node
   - pnpm i
 install:
   - npm run build
