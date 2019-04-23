@@ -22,7 +22,7 @@ export class BootScene extends Phaser.Scene {
         // this.load.image('paddleBlu', './assets/images/paddleBlu.png')
         // this.load.image('brick', './assets/images/element_yellow_rectangle.png')
         // this.load.image('ball', './assets/images/ballBlue.png')
-        this.load.atlas('sprites', './src/assets/spritesheet.png', './src/assets/sprites.json');
+        this.load.atlas('sprites', './assets/spritesheet.png', './assets/sprites.json');
 
 
         this.load.on('complete', () => {
