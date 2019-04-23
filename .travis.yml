@@ -8,6 +8,7 @@ install:
 - npm run build
 - bash deploy.sh
 deploy:
+  local_dir: docs
   provider: pages
   skip_cleanup: true
   github_token: "$GITHUB_TOKEN"
