@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - "7"
+- '7'
 cache: npm
 before_install:
-  - npm i
+- npm i
+- openssl aes-256-cbc -K $encrypted_521473cb8b2e_key -iv $encrypted_521473cb8b2e_iv
+- in id_rsa.pub.enc -out id_rsa.pub -d
+- export $GITHUB_TOKEN=$(cat id_rsa.pub)
 install:
-  - npm run build
-  - bash deploy.sh
+- npm run build
+- bash deploy.sh
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  github_token: "$GITHUB_TOKEN"
   keep_history: true
   on:
     branch: master
