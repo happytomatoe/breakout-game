@@ -3,6 +3,6 @@ node_js:
   - "7"
 cache: npm
 before_install:
-  - npm i -g npm@version-number
+  - npm i  npm@version-number
 install:
   - npm run build
