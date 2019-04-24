@@ -11,6 +11,7 @@ const config: GameConfig = {
     height: 600,
     type: Phaser.AUTO,
     parent: "game",
+    backgroundColor: '#2d2d8d',
     scene: [BootScene,TitleScene, GameScene,PauseScene,GameOverScene],
     physics: {
         default: "arcade",
