@@ -5,6 +5,9 @@
 
 [Play game](https://babkamen.github.io/breakout-game/)
 
+##Special thanks
+
+[Kenney](https://kenney.nl) for all graphics
 
 
 <p align="center">
