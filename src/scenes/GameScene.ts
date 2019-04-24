@@ -4,7 +4,6 @@ import Ball from '../sprites/Ball'
 import CursorKeys = Phaser.Input.Keyboard.CursorKeys;
 import {SceneNames} from "../helper/SceneNames";
 import {SoundEffects} from "../helper/SoundEffects";
-import {Range} from "../helper/Range";
 
 
 export class GameScene extends Phaser.Scene {
