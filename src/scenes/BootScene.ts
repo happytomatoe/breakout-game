@@ -1,7 +1,10 @@
+import {SceneNames} from "../helper/SceneNames";
+import {SoundEffects} from "../helper/SoundEffects";
+
 export class BootScene extends Phaser.Scene {
     constructor(test) {
         super({
-            key: 'BootScene'
+            key: SceneNames.BootScene
         });
     }
 
@@ -19,10 +22,11 @@ export class BootScene extends Phaser.Scene {
         });
 
 
-        // this.load.image('paddleBlu', './assets/images/paddleBlu.png')
-        // this.load.image('brick', './assets/images/element_yellow_rectangle.png')
-        // this.load.image('ball', './assets/images/ballBlue.png')
-        this.load.atlas('sprites', './assets/spritesheet.png', './assets/sprites.json');
+        this.load.atlas('sprites', './assets/images/spritesheet.png', './assets/images/sprites.json');
+        let audioBasePath = 'assets/audio/sfx/';
+        this.load.audio(SoundEffects.BallHitting, audioBasePath + 'ballHitting.ogg');
+        this.load.audio(SoundEffects.BallCrashing, audioBasePath + 'ballCrashing.ogg');
+        this.load.audio(SoundEffects.PaddleHit, audioBasePath + 'paddleHit.ogg');
 
 
         this.load.on('complete', () => {

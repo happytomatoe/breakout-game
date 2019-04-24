@@ -66093,6 +66093,7 @@ declare namespace Phaser {
              * @param key Asset key for the sound.
              * @param extra An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
              */
+
             play(key: string, extra?: SoundConfig | SoundMarker): boolean;
 
             /**

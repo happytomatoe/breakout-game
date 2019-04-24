@@ -1,7 +1,9 @@
+import {SceneNames} from "../helper/SceneNames";
+
 export class TitleScene extends Phaser.Scene {
     constructor(test) {
         super({
-            key: 'TitleScene'
+            key: SceneNames.TitleScene
         });
     }
     preload() {

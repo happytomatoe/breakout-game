@@ -2,6 +2,8 @@ import "phaser";
 import {BootScene} from "./scenes/BootScene";
 import {GameScene} from "./scenes/GameScene";
 import {TitleScene} from "./scenes/TitleScene";
+import {PauseScene} from "./scenes/PauseScene";
+import {GameOverScene} from "./scenes/GameOverScene";
 
 // main game configuration
 const config: GameConfig = {
@@ -9,7 +11,7 @@ const config: GameConfig = {
     height: 600,
     type: Phaser.AUTO,
     parent: "game",
-    scene: [BootScene,TitleScene, GameScene],
+    scene: [BootScene,TitleScene, GameScene,PauseScene,GameOverScene],
     physics: {
         default: "arcade",
         arcade: {
@@ -22,6 +24,7 @@ const config: GameConfig = {
 export class Game extends Phaser.Game {
     constructor(config: GameConfig) {
         super(config);
+        this.registry.set('test',true)
     }
 }
 

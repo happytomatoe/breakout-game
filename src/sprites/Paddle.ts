@@ -12,9 +12,8 @@ export default class Paddle extends Phaser.GameObjects.Sprite {
         this.body.onWorldBounds = true;
         this.cursors=config.cursors;
         this.body.immovable = true;
-        this.speed=600;
-        this.ratio=6;
-        
+        this.speed=1200;
+
     }
 
     update(time, delta) {
