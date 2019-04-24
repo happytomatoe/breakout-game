@@ -1,6 +1,7 @@
 #!/bin/bash
-mkdir destination
-cp index.html destination/
-cp -r dist destination/
-cp -r assets destination/
-#rm -rf destination
+npm run build
+ mkdir deploy
+ cp index.html deploy/
+ cp -r dist deploy/
+ cp -r styles deploy/
+ cp -r assets deploy/
