@@ -19,3 +19,6 @@ deploy:
   keep_history: true
   on:
     branch: master
+env:
+  global:
+    secure: IVOaKOG7hsiDDektNFn3VsvuvhHY79HyzqfEoLJKE63IvdsOQFuX5ii/QXrHG0jJ+O6l59JOOlB1VRbEneGiqcCtblemjluYo4G4+GTWqC3IVr93sdgC+/U9j5ZSj1C5ZP+gXv239a6haNQinKo68hIcSX6J6ZIFQ7O96alOsMnXYLiDKm4N5DivjTK3VPy9F+Yy3SZA8kGywO4BcRMoqPAeqC1VIxHG4if/y+S5dAUKhiQYK7TSuYiOAhaNfsKX+wuVTLsdVX4IUnwJepXLnathZwEU24UNzyQw68Pf7nWx+7qKbaC2yNAyWrbV6DgE/tGd/J/M7thasoCe0qbf1URl2UL2GwaT8tg+Wds0qoWBDOwDn7SxuiTOT/Vk+HyxYUvLMFTabXbX87lTwg8JPQXqNqklnkFQW7pBeXQFUHIYn4xLQ5WoBs9rVdss47BCUzjJX6EAKMmouR5/FNaUocmLtmAYB2GHFTXsPj6wY5JVc40JMOCAIyFh/yOOXcnVFxzmBeJsFTys6Jj+zi+HL1XsOO8KeucWrhcTQc9kO+R50QeR98EBsShhPwcrXOn2Vlh0nVwTj+jwGlrJN+CafqQK3l3bjV2qewImmotcvTJ9J+c+JYn99/68+vVzsx+vbMLyj7F6DMeaSMMLPOx/yJzm6nO/7AjByosctWfuS44=

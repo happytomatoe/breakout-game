@@ -36,7 +36,8 @@ export default class Ball extends Phaser.GameObjects.Sprite {
             gravityY: 200,
             alpha: 0.1,
             active: false,
-            follow: this
+            follow: this,
+            lifespan:1000
         });
 
 
