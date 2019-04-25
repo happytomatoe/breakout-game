@@ -4,6 +4,7 @@ import {GameScene} from "./scenes/GameScene";
 import {TitleScene} from "./scenes/TitleScene";
 import {PauseScene} from "./scenes/PauseScene";
 import {GameOverScene} from "./scenes/GameOverScene";
+import {MenuScene} from "./scenes/MenuScene";
 
 // main game configuration
 const config: GameConfig = {
@@ -11,8 +12,7 @@ const config: GameConfig = {
     height: 600,
     type: Phaser.AUTO,
     parent: "game",
-    backgroundColor: '#2d2d8d',
-    scene: [BootScene,TitleScene, GameScene,PauseScene,GameOverScene],
+    scene: [BootScene,TitleScene, GameScene,PauseScene,GameOverScene,MenuScene],
     physics: {
         default: "arcade",
         arcade: {
@@ -25,7 +25,11 @@ const config: GameConfig = {
 export class Game extends Phaser.Game {
     constructor(config: GameConfig) {
         super(config);
+        this.registry.set("brickColumns",10)
+        this.registry.set("brickRows",5)
         this.registry.set('test',true)
+        this.registry.set('startBallVelocity',400)
+
     }
 }
 

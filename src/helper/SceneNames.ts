@@ -5,4 +5,7 @@ export enum SceneNames {
     GameScene='GameScene',
     PauseScene='PauseScene',
     GameOverScene='GameOverScene',
+    MenuScene='MenuScene' +
+        '',
+
 }

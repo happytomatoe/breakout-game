@@ -2,7 +2,7 @@ import CursorKeys = Phaser.Input.Keyboard.CursorKeys;
 
 export default class Paddle extends Phaser.GameObjects.Sprite {
     private cursors:CursorKeys
-    private speed
+    readonly speed
     private ratio
     private spriteBody:Phaser.Physics.Arcade.Body
     constructor(config) {
@@ -18,16 +18,9 @@ export default class Paddle extends Phaser.GameObjects.Sprite {
     }
 
     update(time, delta) {
-
-        // let distance=Math.abs(this.scene.input.mousePointer.x - this.x)
-        // if ( distance> this.speed) {
-        //     this.body.setVelocityX(this.scene.input.mousePointer.x > this.x?this.speed:-this.speed)
-
-        // }else if(distance > 3){
-        //     this.body.setVelocityX(this.scene.input.mousePointer.x > this.x?distance*this.ratio:-distance*this.ratio)
-            
-        // }
-        
+        if(this.spriteBody.onWall()){
+            console.log("On wall")
+        }
         if(this.cursors.left.isDown){
             this.body.setVelocityX(-this.speed)
         }else if(this.cursors.right.isDown){
@@ -35,8 +28,6 @@ export default class Paddle extends Phaser.GameObjects.Sprite {
         }
         else
             this.body.setVelocityX(0)
-
-
     }
 
 

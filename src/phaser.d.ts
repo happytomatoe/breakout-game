@@ -1529,7 +1529,8 @@ declare type GroupConfig = {
  * In the simplest case, 1 + `repeat` objects will be created.
  * 
  * If `max` is positive, then the total created will not exceed `max`.
- * 
+ *
+ *
  * `key` is required. {@link Phaser.GameObjects.Group#defaultKey} is not used.
  */
 declare type GroupCreateConfig = {
@@ -1544,7 +1545,7 @@ declare type GroupCreateConfig = {
     /**
      * The texture frame of each new Game Object.
      */
-    frame?: string | integer;
+    frame?: string[] | integer[];
     /**
      * The visible state of each new Game Object.
      */
@@ -1634,6 +1635,7 @@ declare type GroupCreateConfig = {
      */
     hitArea?: any;
     /**
+     *
      * A callback to be invoked when the Game Object is interacted with.
      */
     hitAreaCallback?: HitAreaCallback;

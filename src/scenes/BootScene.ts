@@ -9,8 +9,7 @@ export class BootScene extends Phaser.Scene {
     }
 
     preload() {
-        console.log(
-            "Booting")
+        console.log("Booting")
 
         const progress = this.add.graphics();
 
@@ -23,8 +22,11 @@ export class BootScene extends Phaser.Scene {
 
 
         this.load.atlas('sprites', './assets/images/spritesheet.png', './assets/images/sprites.json');
+        this.load.atlasXML('icons', './assets/images/sheet_white1x.png', './assets/images/sheet_white1x.xml');
+        this.load.spritesheet("explosion",'./assets/images/Explosion.png',{ frameWidth: 34, frameHeight: 34, endFrame: 12 })
         let audioBasePath = 'assets/audio/sfx/';
         this.load.audio(SoundEffects.BallHitting, audioBasePath + 'ballHitting.ogg');
+        this.load.audio(SoundEffects.Explosion, audioBasePath + 'explosion.wav');
         this.load.audio(SoundEffects.BallCrashing, audioBasePath + 'ballCrashing.ogg');
         this.load.audio(SoundEffects.PaddleHit, audioBasePath + 'paddleHit.ogg');
 
@@ -33,7 +35,7 @@ export class BootScene extends Phaser.Scene {
             // prepare all animations, defined in a separate file
             // makeAnimations(this);
             progress.destroy();
-            this.scene.start('TitleScene');
+            this.scene.start(SceneNames.MenuScene);
         });
     }
 }
