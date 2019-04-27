@@ -17,7 +17,7 @@ export class GameScene extends Phaser.Scene {
     private updatable;
     private background: Phaser.GameObjects.Rectangle;
     private muteIcon: Phaser.GameObjects.Image;
-
+    private brickParticles: Phaser.GameObjects.Particles.ParticleEmitterManager;
     constructor(test) {
         super({
             key: SceneNames.GameScene
@@ -28,8 +28,9 @@ export class GameScene extends Phaser.Scene {
     create() {
         this.updatable = true;
         this.configureInput();
+
         this.createGameObjects();
-        let v = this.add.image(+this.game.config.width - 50, 50, "icons", 'audioOn.png')
+        let v = this.add.image(+this.game.config.width - 50, 50, "icons", this.sound.mute ? 'audioOff.png' : 'audioOn.png')
         v.setInteractive()
         v.setOrigin(0.5)
         this.muteIcon = v;
@@ -76,6 +77,8 @@ export class GameScene extends Phaser.Scene {
 
     private createGameObjects() {
         this.background = this.add.rectangle(0, 0, +this.game.config.width * 2, +this.game.config.height * 2, 0x2d2d8d, 1);
+        this.brickParticles = this.add.particles('sprites');
+
         this.paddle = new Paddle({
             scene: this,
             x: +this.game.config.width / 2,
@@ -127,12 +130,36 @@ export class GameScene extends Phaser.Scene {
     }
 
     hitBrick(ball, brick) {
+        console.log("Brick=", brick.frame)
+        this.createDestroyedBrickParticles(brick, ball);
+
         this.sfxs.ballHit.play();
         brick.disableBody(true, true);
         this.brickCount--;
         if (this.brickCount == 0) {
             this.win();
         }
+    }
+
+    private createDestroyedBrickParticles(brick, ball) {
+        let config = {
+            frame: brick.frame.name.replace('_rectangle', '_diamond'),
+            speed: 0,
+            gravityX: -100,
+            gravityY: 200,
+            alpha: 1,
+            maxParticles: 1,
+            lifespan: 5000,
+            particleBringToTop: false,
+            x: brick.x,
+            y: brick.y + brick.height / 2,
+
+        }
+        this.brickParticles.createEmitter(config)
+        // config.gravityX = 100
+        config.gravityX = ball.spriteBody.velocity.x
+        config.gravityY = 200
+        this.brickParticles.createEmitter(config);
     }
 
     hitPaddle(paddle, ball) {

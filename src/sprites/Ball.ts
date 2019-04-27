@@ -14,10 +14,10 @@ export default class Ball extends Phaser.GameObjects.Sprite {
         config.scene.add.existing(this);
         config.scene.physics.world.enable(this);
         this.started = false;
-        this.body.bounce.set(1)
+        this.body.bounce.set(1);
         this.body.setCollideWorldBounds(true);
         this.body.onWorldBounds = true;
-        this.spriteBody = this.body
+        this.spriteBody = this.body;
         this.following = false;
         var config2 = {
             key: 'explosion',

@@ -1,6 +1,6 @@
 import {SceneNames} from "../helper/SceneNames";
 
-export class GameOverScene extends Phaser.Scene {
+export class GameEndingScene extends Phaser.Scene {
 
     private text:string
 

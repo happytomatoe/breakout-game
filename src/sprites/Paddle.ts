@@ -13,7 +13,7 @@ export default class Paddle extends Phaser.GameObjects.Sprite {
         this.body.onWorldBounds = true;
         this.cursors=config.cursors;
         this.body.immovable = true;
-        this.speed=1200;
+        this.speed = this.scene.registry.get("paddleSpeed");
         this.spriteBody=this.body
     }
 
